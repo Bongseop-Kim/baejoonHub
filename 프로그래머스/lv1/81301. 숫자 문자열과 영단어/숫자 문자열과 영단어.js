@@ -1,23 +1,19 @@
-function solution(str) {
-  const mapping = {
-    zero: 0,
-    one: 1,
-    two: 2,
-    three: 3,
-    four: 4,
-    five: 5,
-    six: 6,
-    seven: 7,
-    eight: 8,
-    nine: 9,
-  };
-
-  let numStr = str;
-
-  Object.keys(mapping).forEach((key) => {
-    const regex = new RegExp(key, "g");
-    numStr = numStr.replace(regex, mapping[key]);
-  });
-
-  return Number(numStr);
+function solution(s) {
+  var answer = s;
+  const num = [
+    ["zero", "0"],
+    ["one", "1"],
+    ["two", "2"],
+    ["three", "3"],
+    ["four", "4"],
+    ["five", "5"],
+    ["six", "6"],
+    ["seven", "7"],
+    ["eight", "8"],
+    ["nine", "9"],
+  ];
+  for (const a of num) {
+    answer = answer.replaceAll(a[0], a[1]);
+  }
+  return Number(answer);
 }
